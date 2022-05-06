@@ -13,7 +13,7 @@ getMovies = async() => {
       data: { movies },
     },
   } = await axios.get("https://yts-proxy.now.sh/list_movies.json");
-  console.log(movies);
+  this.setState({ movies, isLoading: false });
 }
 componentDidMount() {
   this.getMovies();
